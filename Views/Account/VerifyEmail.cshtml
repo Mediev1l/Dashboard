@@ -1,0 +1,15 @@
+﻿
+@{ 
+    ViewData["Title"] = "Verified!";
+}
+
+<div class="email-verification-screen">
+    <div class="email-verification-box email-verified">
+        <img src="~/Images/EmailConfirmation.png" />
+        <div class="verify-message">
+            <i class="fas fa-check-circle"></i>
+            <h2>Your account has been verified!</h2>
+        </div>
+        <a asp-action="Login" asp-controller="Account" class="log-btn verify-btn">Login</a>
+    </div>
+</div>

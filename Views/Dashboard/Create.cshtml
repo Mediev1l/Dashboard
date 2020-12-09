@@ -1,0 +1,19 @@
+﻿@model MyBoard.Models.BoardModels.Board
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+<div class="dashboard-content">
+    <div class="dashboard-create-box">
+        <form action="Create" method="post">
+            <h1>Create Dashboard</h1>
+            <div>
+                <i class="far fa-clipboard"></i>
+                <input asp-for="@Model.Name" type="text" placeholder="Name">
+            </div>
+            <button type="submit" class="btn-submit">Create</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+﻿@model AppUser
+@{
+    object controller;
+    string controllerName = string.Empty;
+    if(ViewContext.RouteData.Values.TryGetValue("controller", out controller))
+    {
+        controllerName = controller.ToString();
+    }
+
+}
+<header class="top-bar">
+    <div class="left-area">
+       <a asp-controller="Dashboard" asp-action="Index"> 
+        <h3>Plan <span>Dashboard</span></h3> 
+       </a>
+    </div>
+    <div class="right-area">
+        @if (@Model != null && @controllerName != "Account")
+        {
+            <a asp-controller="Account" asp-action="Logout" class="log-btn">Logout</a>
+        }
+        else if(@controllerName != "Account")
+        {
+            <a asp-controller="Account" asp-action="Login" class="log-btn">Login</a>
+        }
+    </div>
+</header>

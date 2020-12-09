@@ -1,0 +1,38 @@
+﻿@model IEnumerable<MyBoard.Models.BoardModels.Board>
+
+@{
+    ViewBag.Title = "MyBoards";
+}
+
+
+<div class="dashboard-content">
+    <div class="boards-content">
+        <div class="board-box">
+            <div class="board-title">
+                <h3>DashBoard name</h3>
+                <i class="far fa-star"></i>
+            </div>
+            <div class="board-users">
+                <ul>
+                    <li><i class="far fa-user"></i>Bart</li>
+                    <li><i class="far fa-user"></i>Jarno</li>
+                    <li><i class="far fa-user"></i>Anna</li>
+                </ul>
+            </div>
+            <div class="board-options">
+                <a>
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Backlog</span>
+                </a>
+                <a>
+                    <i class="far fa-edit"></i>
+                    <span>Edit</span>
+                </a>
+                <a>
+                    <i class="fas fa-trash"></i>
+                    <span>Delete</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

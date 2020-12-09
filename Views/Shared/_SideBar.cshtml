@@ -1,0 +1,32 @@
+﻿@model AppUser
+
+<div class="sidebar sidebar-small">
+    <center>
+        <i id="sidebar-hamburger" class="fas fa-bars"></i>
+        @if (Model == null)
+        {
+            <img src="~/Images/Users/Unknown.jpg" class="profile-image" alt="Profile Pic" />
+            <h4 class="user-name">Hello user!</h4>
+        }
+        else
+        {
+            @if (Model.ImageUrl != null)
+            {
+                <img src="@Model.ImageUrl" class="profile-image" alt="Profile Pic" />
+            }
+            else
+            {
+                <img src="~/Images/Users/Unknown.jpg" class="profile-image" alt="Profile Pic" />
+            }
+            <h4 class="user-name">Hello @Model.NickName</h4>
+        }
+    </center>
+
+    <a asp-action="" asp-controller=""><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+    <a asp-action="" asp-controller=""><i class="fas fa-clipboard-list"></i><span>Backlog</span></a>
+    <a asp-action="Index" asp-controller="MyBoards"><i class="fas fa-chalkboard"></i><span>My Boards</span></a>
+    <a asp-action="" asp-controller=""><i class="fas fa-network-wired"></i><span>Public Boards</span></a>
+    <a asp-action="" asp-controller=""><i class="far fa-address-card"></i><span>Account</span></a>
+    <a asp-action="" asp-controller=""><i class="fas fa-info-circle"></i><span>About</span></a>
+</div>
+

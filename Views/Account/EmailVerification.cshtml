@@ -1,0 +1,18 @@
+﻿@model AppUser
+@{
+    ViewData["Title"] = "Confirmation";
+
+}
+
+
+<div class="email-verification-screen">
+    <div class="email-verification-box">
+        <img src="~/Images/EmailConfirmation.png" alt="Confirmation image"/>
+        <h2>Email Confirmation</h2>
+        <span>
+            Hey @Model.UserName you're almost ready to start enjoying Task Board. <br />
+            Confirmation E-mail has been send to @Model.Email,<br />
+            simply click the link to verify your account.
+        </span>
+    </div>
+</div>

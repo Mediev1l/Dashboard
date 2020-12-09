@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <StartupObject>MyBoard.Program</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20201119213401_userBoardChamge.cs" />
+    <Compile Remove="Data\Migrations\20201119213401_userBoardChamge.Designer.cs" />
+    <Compile Remove="Data\Migrations\20201119213541_userBoardChamge.cs" />
+    <Compile Remove="Data\Migrations\20201119213541_userBoardChamge.Designer.cs" />
+    <Compile Remove="Data\Migrations\20201119213627_userBoardChamge.cs" />
+    <Compile Remove="Data\Migrations\20201119213627_userBoardChamge.Designer.cs" />
+    <Compile Remove="Data\Migrations\20201119213958_userBoardChamge.cs" />
+    <Compile Remove="Data\Migrations\20201119213958_userBoardChamge.Designer.cs" />
+    <Compile Remove="Data\Migrations\20201119214101_userBoardChamge.cs" />
+    <Compile Remove="Data\Migrations\20201119214101_userBoardChamge.Designer.cs" />
+    <Compile Remove="Data\Migrations\20201119214315_DbInit.cs" />
+    <Compile Remove="Data\Migrations\20201119214315_DbInit.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.35" />
+    <PackageReference Include="LiveSharp" Version="1.6.12" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="3.1.9" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+    <PackageReference Include="NETCore.MailKit" Version="2.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Images\Background\" />
+    <Folder Include="wwwroot\Images\Users\" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="https://json.schemastore.org/asmdef" /></VisualStudio></ProjectExtensions>
+
+</Project>

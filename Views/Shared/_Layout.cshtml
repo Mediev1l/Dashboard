@@ -1,0 +1,33 @@
+﻿@inject UserManager<AppUser> _userManager;
+
+@{ 
+    var user = await _userManager.GetUserAsync(User);
+    var claims = _userManager.GetClaimsAsync(user);
+}
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link href="~/css/Site.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css", rel="stylesheet"/>
+</head>
+<body>
+    <partial name="~/Views/Shared/_TopBar.cshtml" model="@user" />
+    <partial name="~/Views/Shared/_SideBar.cshtml" model="@user" />
+
+    <div id="render-body" class="render-body-small">
+        @RenderBody()
+    </div>
+
+
+    <script src="~/js/Sidebar.js"></script>
+    @if (IsSectionDefined("Scripts"))
+    {
+        @RenderSection("Scripts", required: true)
+    }
+</body>
+</html>

@@ -1,0 +1,19 @@
+﻿@model MyBoard.Models.ViewModels.RegisterViewModel;
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>Register</h1>
+
+<form asp-action="Register" method="post">
+   
+    <input type="text" asp-for="@Model.Username" />
+    <span asp-validation-for="@Model.Username"></span>
+    <input type="text" asp-for="@Model.Email" />
+    <span asp-validation-for="@Model.Email"></span>
+    <input type="password" asp-for="@Model.Password" value="" />
+    <span asp-validation-for="@Model.Password"></span>
+    <button type="submit">Login</button>
+</form>
+

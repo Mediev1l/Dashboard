@@ -1,0 +1,33 @@
+﻿@model IEnumerable<MyBoard.Models.BoardModels.Board>
+@{
+    var user = ViewData["user"].ToString();
+}
+
+<div id="dashboard" class="dashboard-content">
+    @if (user == "False")
+    {
+        <div class="dashboard-info">
+            <div>
+                <i class="fas fa-users"></i>
+                <h2>You are not logged in!</h2>
+            </div>
+            <span>Log in to access your dashboards or look at public boards</span>
+            <div>
+                <a asp-action="Login" asp-controller="Account">Login</a>
+                <a asp-action="Public" asp-controller="Dashboard">Public Boards</a>
+            </div>
+        </div>
+    }
+    else
+    {
+        @if (Model == null)
+        {
+            <div class="dashboard-info dashboard-align">
+                <h2>You dont have any dashboard!</h2>
+                <span>Press button to create one</span>
+                <a asp-action="Create" asp-controller="Dashboard">Create</a>
+            </div>
+        }
+    }
+
+</div>

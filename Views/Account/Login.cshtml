@@ -1,0 +1,60 @@
+﻿@model MyBoard.Models.ViewModels.LoginViewModel;
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="login-page">
+    <div class="log-box">
+        <div class="btn-box">
+            <div id="btn-color"></div>
+            <button type="button" class="btn-toggle" onclick="toLogin()">Login</button>
+            <button type="button" class="btn-toggle" onclick="toRegister()">Register</button>
+        </div>
+        <div class="social-media">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-google-plus-g"></i>
+        </div>
+        <div id="forms">
+            <form id="login" class="login-form" asp-action="login" method="post">
+                <div>
+                    <i class="fas fa-user"></i>
+                    <input type="text" asp-for="@Model.Login.Username" placeholder="Username" />
+                    <span asp-validation-for="@Model.Login.Username" class="validation"></span>
+                </div>
+                <div>
+                    <i class="fas fa-lock"></i>
+                    <input type="password" asp-for="@Model.Login.Password" placeholder="Password" value="" />
+                    <span asp-validation-for="@Model.Login.Password" class="validation"></span>
+                </div>
+                <button type="submit" class="btn-submit">Login</button>
+            </form>
+
+            <form id="register" class="login-form" asp-action="register" method="post">
+                <div>
+                    <i class="fas fa-user"></i>
+                    <input type="text" asp-for="@Model.Register.Username" placeholder="Username" />
+                    <span asp-validation-for="@Model.Register.Username" class="validation"></span>
+                </div>
+                <div>
+                    <i class="far fa-envelope"></i>
+                    <input type="text" asp-for="@Model.Register.Email" placeholder="Email" />
+                    <span asp-validation-for="@Model.Register.Email" class="validation"></span>
+                </div>
+                <div>
+                    <i class="fas fa-lock"></i>
+                    <input type="password" asp-for="@Model.Register.Password" placeholder="Password" value="" />
+                    <span asp-validation-for="@Model.Register.Password" class="validation"></span>
+                </div>
+                <button type="submit" class="btn-submit">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        var CurrentLogin = @ViewData["Login"].ToString().ToLower();
+    </script>
+    <script src="~/js/Login.js"></script>
+}
